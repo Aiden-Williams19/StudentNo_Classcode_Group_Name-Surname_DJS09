@@ -1,7 +1,7 @@
-
-const propertyContainer = document.querySelector('.properties')
-
+// Enum Types
 import { showReviewTotal, populateUser } from './utils'
+const propertyContainer = document.querySelector('.properties')
+const footer = document.querySelector('.footer')
 let isOpen: boolean
 
 // Reviews
@@ -46,6 +46,8 @@ const you: {
     stayedAt: ['florida-home', 'oman-flat', 'tokyo-bungalow']
 }
 
+
+
 // Array of Properties
 const properties : {
     image: string;
@@ -57,7 +59,7 @@ const properties : {
         code: number;
         country: string;
     };
-    contact: [number, string];
+    contact: [ number, string ];
     isAvailable: boolean;
 }[] = [
     {
@@ -70,7 +72,7 @@ const properties : {
             code: 45632,
             country: 'Colombia'
         },
-        contact: [+1123495082908, 'marywinkle@gmail.com'],
+        contact: [+112343823978921, 'marywinkle@gmail.com'],
         isAvailable: true  
     },
     {
@@ -83,7 +85,7 @@ const properties : {
             code: 343903,
             country: 'Poland'
         },
-        contact: [+1123495082908, 'garydavis@hotmail.com'],
+        contact: [+1298239028490830, 'garydavis@hotmail.com'],
         isAvailable: false 
     },
     {
@@ -96,11 +98,10 @@ const properties : {
             code: 35433,
             country: 'United Kingdom',
         },
-        contact: [ +1123495082908, 'andyluger@aol.com'],
+        contact: [+34829374892553, 'andyluger@aol.com'],
         isAvailable: true
     }
 ]
-
 
 // Functions
 showReviewTotal(reviews.length, reviews[0].name, reviews[0].loyaltyUser)
@@ -117,4 +118,7 @@ for (let i = 0; i < properties.length; i++) {
     card.appendChild(image)
     propertyContainer.appendChild(card)
 }
+
+let currentLocation : [string, string, number] = ['Cape Town', '11.03', 17]
+footer.innerHTML = currentLocation[0] + ' ' + currentLocation[1] + ' ' + currentLocation[2] + '°'
 
